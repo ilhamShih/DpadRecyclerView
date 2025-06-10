@@ -18,8 +18,8 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "DpadRecyclerView"
-include ':sample'
+//include ':sample'
 include ':dpadrecyclerview'
-include ':dpadrecyclerview-testing'
-include ':dpadrecyclerview-test-fixtures'
-include ':dpadrecyclerview-compose'
+//include ':dpadrecyclerview-testing'
+//include ':dpadrecyclerview-test-fixtures'
+//include ':dpadrecyclerview-compose'

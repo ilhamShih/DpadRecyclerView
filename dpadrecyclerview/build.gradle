@@ -14,8 +14,8 @@ android {
 
     defaultConfig {
         minSdk 16 // versions.minSdkVersion
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunnerArguments useTestStorageService: 'true'
+       // testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+       // testInstrumentationRunnerArguments useTestStorageService: 'true'
     }
 
     buildTypes {
@@ -57,13 +57,13 @@ dependencies {
     testImplementation libs.junit
     testImplementation libs.truth
     testImplementation libs.mockk
-    testImplementation project (':dpadrecyclerview-test-fixtures')
+   // testImplementation project (':dpadrecyclerview-test-fixtures')
 
-    androidTestImplementation libs.androidx.fragment.testing
+   /* androidTestImplementation libs.androidx.fragment.testing
     androidTestImplementation libs.carioca.report
     androidTestImplementation project (':dpadrecyclerview-testing')
     androidTestImplementation project (':dpadrecyclerview-test-fixtures')
-    androidTestUtil libs.androidx.test.services
+    androidTestUtil libs.androidx.test.services*/
 }
 
 allureReport {
