@@ -18,8 +18,10 @@ package com.rubensousa.dpadrecyclerview.layoutmanager.alignment
 
 
 import android.graphics.Rect
+import android.os.Build
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.ViewCompat
 import com.rubensousa.dpadrecyclerview.ChildAlignment
 import com.rubensousa.dpadrecyclerview.SubPositionAlignment
 import com.rubensousa.dpadrecyclerview.ViewAlignment
@@ -123,7 +125,13 @@ internal class ChildAlignmentCalculator {
     ): Int {
         var anchor = 0
         val height = if (alignmentView === itemView) {
-            if (itemView.isLaidOut) {
+            if (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    itemView.isLaidOut
+                } else {
+                    @Suppress("DEPRECATION")
+                    ViewCompat.isLaidOut(itemView)
+                }
+            ) {
                 itemView.height
             } else {
                 itemView.measuredHeight
@@ -192,7 +200,13 @@ internal class ChildAlignmentCalculator {
     ): Int {
         var anchor = 0
         val alignmentWidth = if (alignmentView === itemView) {
-            if (itemView.isLaidOut) {
+            if (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    itemView.isLaidOut
+                } else {
+                    @Suppress("DEPRECATION")
+                    ViewCompat.isLaidOut(itemView)
+                }
+            ) {
                 itemView.width
             } else {
                 itemView.measuredWidth

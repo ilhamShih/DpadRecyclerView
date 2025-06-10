@@ -13,7 +13,7 @@ android {
     compileSdk versions.compileSdkVersion
 
     defaultConfig {
-        minSdk versions.minSdkVersion
+        minSdk 16 // versions.minSdkVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunnerArguments useTestStorageService: 'true'
     }
